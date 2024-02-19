@@ -25,7 +25,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { nowPlayingMovies, upcomingMovies, popularMovies, searchMovies, movieDetails, movieCastDetails  } from './src/api/apicalls';
+import {
+  nowPlayingMovies,
+  upcomingMovies,
+  popularMovies,
+  searchMovies,
+  movieDetails,
+  movieCastDetails,
+} from './src/api/apiCalls';
 
 type SectionProps = PropsWithChildren<{
   title: string;
