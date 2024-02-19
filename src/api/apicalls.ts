@@ -3,6 +3,10 @@ import { API_KEY, API_READ_ACCESS_TOKEN } from "@env";
 // The apiKey constant holds the API key for The Movie Database (TMDB) API
 const apiKey = API_KEY;
 
+export const baseImagePath = (size: string, path: string) => {
+    return `https://image.tmdb.org/t/p/${size}${path}`;
+};
+
 // nowPlayingMov is a constant that holds the URL for fetching now playing movies from TMDB API
 export const nowPlayingMovies: string = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`;
 
@@ -14,7 +18,7 @@ export const popularMovies: string = `https://api.themoviedb.org/3/movie/popular
 
 // searchMovies is a function that returns the URL for searching movies with a given keyword in TMDB API
 export const searchMovies = (keyword:string) => {
-    return `https://api.themoviedb.org/3/search/movie&query=${keyword}`;
+    return `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${keyword}`;
 };
 
 // movieDetails is a function that returns the URL for fetching details of a movie with a given movie_id from TMDB API

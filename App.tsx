@@ -25,7 +25,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import CustomIcon from './src/components/CustomIcon';
+import { nowPlayingMovies, upcomingMovies, popularMovies, searchMovies, movieDetails, movieCastDetails  } from './src/api/apicalls';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -33,6 +33,8 @@ type SectionProps = PropsWithChildren<{
 
 function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
+  console.log(searchMovies('Avengers'));
   return (
     <View style={styles.sectionContainer}>
       <Text
