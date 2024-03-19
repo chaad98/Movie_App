@@ -1,26 +1,43 @@
-import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {COLORS} from '../theme/theme';
+import {
+  upcomingMovies,
+  nowPlayingMovies,
+  popularMovies,
+  baseImagePath,
+} from '../api/apiCalls';
+
+const {width, height} = Dimensions.get('window');
 
 // defining the HomeScreen functional component
 const HomeScreen = ({navigation}: any) => {
-  return (
-    <View style={styles.container}>
-      {/* Render a TouchableOpacity component with an onPress function that navigates to the MovieDetails screen */}
-      <TouchableOpacity onPress={() => {
-        navigation.push('MovieDetails')
-      }}>
-        {/* Render a Text component with the text "Home Screen" */}
-        <Text style={styles.container}>Home Screen</Text>
-      </TouchableOpacity>
-    </View>
+  const [nowPlayingMoviesList, setNowPlayingMoviesList] = useState<
+    string | null
+  >(null);
+  const [popularMoviesList, setPopularMoviesList] = useState<string | null>(
+    null,
   );
+  const [upcomingMoviesList, setUpcomingMoviesList] = useState<string | null>(
+    null,
+  );
+
+  if (nowPlayingMoviesList) {
+  }
+
+  return <View style={styles.container}></View>;
 };
 
 // Define the styles for the HomeScreen component
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.Black
+    backgroundColor: COLORS.Orange,
   },
 });
 
